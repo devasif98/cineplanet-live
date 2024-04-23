@@ -9,7 +9,7 @@ const UpcomingMovieUpload = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("https://cineplanet-server.vercel.app/category")
+    fetch("https://cineplanet-movie-server.vercel.app/category")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -48,10 +48,10 @@ const UpcomingMovieUpload = () => {
     formvideo.append("filename", video);
     setLoading(true);
 
-    const url = "https://cineplanet-server.vercel.app/uploadPhoto";
+    const url = "https://cineplanet-movie-server.vercel.app/uploadPhoto";
 
     // video upload firebase-------------------------
-    fetch("https://cineplanet-server.vercel.app/uploadVideo", {
+    fetch("https://cineplanet-movie-server.vercel.app/uploadVideo", {
       method: "POST",
       body: formvideo,
     })
@@ -83,7 +83,7 @@ const UpcomingMovieUpload = () => {
               // video
             };
             console.log(addMovie);
-            fetch("https://cineplanet-server.vercel.app/upcoming", {
+            fetch("https://cineplanet-movie-server.vercel.app/upcoming", {
               method: "POST",
               headers: { "content-type": "application/json" },
               body: JSON.stringify(addMovie),

@@ -11,7 +11,7 @@ const Like = ({ info }) => {
 
   const handleLike = () => {
     if (user?.email) {
-      fetch(`https://cineplanet-server.vercel.app/movieLike/${_id}`, {
+      fetch(`https://cineplanet-movie-server.vercel.app/movieLike/${_id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

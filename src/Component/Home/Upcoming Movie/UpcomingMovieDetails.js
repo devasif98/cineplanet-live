@@ -1,23 +1,22 @@
 import React from "react";
-import {  FaShareAlt } from "react-icons/fa";
-import { FiLogIn } from "react-icons/fi";
-import {  useParams } from "react-router-dom";
+import { FaShareAlt } from "react-icons/fa";
+import { useParams } from "react-router-dom";
 
 import { useQuery } from "react-query";
 import {
-  EmailIcon,
-  EmailShareButton,
-  FacebookIcon,
-  FacebookShareButton,
-  TelegramIcon,
-  TelegramShareButton,
-  TwitterIcon,
-  TwitterShareButton,
-  WhatsappIcon,
-  WhatsappShareButton
+    EmailIcon,
+    EmailShareButton,
+    FacebookIcon,
+    FacebookShareButton,
+    TelegramIcon,
+    TelegramShareButton,
+    TwitterIcon,
+    TwitterShareButton,
+    WhatsappIcon,
+    WhatsappShareButton
 } from "react-share";
-import Star from "../TopRated/Star";
 import FlexMovieItems from "../Hero/FlexMovieItems";
+import Star from "../TopRated/Star";
 
 const UpcomingMovieDetails = () => {
   const params = useParams();
@@ -27,7 +26,7 @@ const UpcomingMovieDetails = () => {
     queryKey: ["details"],
     queryFn: async () => {
       const res = await fetch(
-        `https://cineplanet-server.vercel.app/upcoming/${id}`
+        `https://cineplanet-movie-server.vercel.app/upcoming/${id}`
       );
       const data = await res.json();
       return data;

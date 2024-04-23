@@ -1,19 +1,19 @@
 import React from "react";
 import { TbMovie } from "react-icons/tb";
 import { useQuery } from "react-query";
-import { Swiper, SwiperSlide } from "swiper/react";
-import Title from "../../Title/Title";
 import { Link } from "react-router-dom";
-import Star from "./Star";
 import { Autoplay, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import Favorite from "../../../Shared/Favorite/Favorite";
+import Title from "../../Title/Title";
 import ViewAllBtn from "../../button/ViewAllBtn";
+import Star from "./Star";
 
 const TopRated = () => {
   const { data: movies } = useQuery({
     queryKey: ["movies"],
     queryFn: async () => {
-      const res = await fetch(`https://cineplanet-server.vercel.app/movies`);
+      const res = await fetch(`https://cineplanet-movie-server.vercel.app/movies`);
       const data = await res.json();
 
       return data;

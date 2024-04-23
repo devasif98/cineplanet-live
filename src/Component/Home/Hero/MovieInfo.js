@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { useParams } from "react-router-dom";
-import FlexMovieItems from "./FlexMovieItems";
 import "./watch.css";
 
 const MovieInfo = () => {
@@ -14,7 +13,7 @@ const MovieInfo = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://cineplanet-server.vercel.app/movies/${id}`)
+    fetch(`https://cineplanet-movie-server.vercel.app/movies/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

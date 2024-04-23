@@ -1,19 +1,16 @@
-import React, { useState } from "react";
-import { FaHeart } from "react-icons/fa";
+import React from "react";
 import { useQuery } from "react-query";
-import { Link } from "react-router-dom";
 import { Autoplay, FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import FlexMovieItems from "../Component/Home/Hero/FlexMovieItems";
-import Favorite from "../Shared/Favorite/Favorite";
 
 const MovieBanner = () => {
   const { data: movies, refetch } = useQuery({
     queryKey: ["movies"],
     queryFn: async () => {
-      const res = await fetch(`https://cineplanet-server.vercel.app/movies`);
+      const res = await fetch(`https://cineplanet-movie-server.vercel.app/movies`);
       const data = await res.json();
 
       return data;

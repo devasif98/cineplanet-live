@@ -10,7 +10,7 @@ const FavoriteList = () => {
     queryKey: ["info"],
     queryFn: async () => {
       const res = await fetch(
-        `https://cineplanet-server.vercel.app/favorite?email=${user?.email}`
+        `https://cineplanet-movie-server.vercel.app/favorite?email=${user?.email}`
       );
       const data = await res.json();
       return data;

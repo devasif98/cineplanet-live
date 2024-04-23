@@ -1,22 +1,22 @@
 import React, { useContext, useState } from "react";
 
+import axios from "axios";
+import moment from "moment/moment";
+import { toast } from "react-hot-toast";
 import { BsBookmarkStarFill } from "react-icons/bs";
-import Title from "../Title/Title";
-import { Select } from "./UsedInput";
-import Star from "../Home/TopRated/Star";
 import { useQuery } from "react-query";
 import { AuthContext } from "../../Context/UserContext";
-import moment from "moment/moment";
+import Star from "../Home/TopRated/Star";
+import Title from "../Title/Title";
+import { Select } from "./UsedInput";
 import UserReview from "./UserReview";
-import axios from "axios";
-import { toast } from "react-hot-toast";
 
 const Review = ({ movie }) => {
   const { user } = useContext(AuthContext);
   const { _id } = movie;
 
   const { data, isLoading, refetch } = useQuery("blogs", () =>
-    axios(`https://cineplanet-server.vercel.app/review/${_id}`)
+    axios(`https://cineplanet-movie-server.vercel.app/review/${_id}`)
   );
   refetch()
   console.log(data);
@@ -65,7 +65,7 @@ const Review = ({ movie }) => {
       rate: rating,
     };
 
-    fetch(`https://cineplanet-server.vercel.app/review`, {
+    fetch(`https://cineplanet-movie-server.vercel.app/review`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

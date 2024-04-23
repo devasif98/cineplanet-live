@@ -1,13 +1,12 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
-import Search from "../../Search";
 
 const TopRated = () => {
     const { data: allMovies } = useQuery({
         queryKey: ["allMovies"],
         queryFn: async () => {
-          const res = await fetch(`https://cineplanet-server.vercel.app/topRated`);
+          const res = await fetch(`https://cineplanet-movie-server.vercel.app/topRated`);
           const data = await res.json();
     
           return data;

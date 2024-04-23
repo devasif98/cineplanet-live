@@ -6,21 +6,21 @@ import FlexMovieItems from "./FlexMovieItems";
 
 import { useQuery } from "react-query";
 import {
-  EmailIcon,
-  EmailShareButton,
-  FacebookIcon,
-  FacebookShareButton,
-  TelegramIcon,
-  TelegramShareButton,
-  TwitterIcon,
-  TwitterShareButton,
-  WhatsappIcon,
-  WhatsappShareButton,
+    EmailIcon,
+    EmailShareButton,
+    FacebookIcon,
+    FacebookShareButton,
+    TelegramIcon,
+    TelegramShareButton,
+    TwitterIcon,
+    TwitterShareButton,
+    WhatsappIcon,
+    WhatsappShareButton,
 } from "react-share";
+import Favorite from "../../../Shared/Favorite/Favorite";
 import MostViewed from "../../MostViewed/MostViewed";
 import Review from "../../Review/Review";
 import Star from "../TopRated/Star";
-import Favorite from "../../../Shared/Favorite/Favorite";
 
 const Watch = () => {
   const params = useParams();
@@ -30,7 +30,7 @@ const Watch = () => {
     queryKey: ["details"],
     queryFn: async () => {
       const res = await fetch(
-        `https://cineplanet-server.vercel.app/movies/${id}`
+        `https://cineplanet-movie-server.vercel.app/movies/${id}`
       );
       const data = await res.json();
       refetch();
@@ -40,7 +40,7 @@ const Watch = () => {
 
   const handleViewed = (id) => {
     console.log("hit outside");
-    fetch(`https://cineplanet-server.vercel.app/viewed/${id}`, {
+    fetch(`https://cineplanet-movie-server.vercel.app/viewed/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())

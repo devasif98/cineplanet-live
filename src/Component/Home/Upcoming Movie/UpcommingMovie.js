@@ -3,14 +3,13 @@ import { BsCollectionFill } from "react-icons/bs";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import Favorite from "../../../Shared/Favorite/Favorite";
-import ViewAllBtn from "../../button/ViewAllBtn";
 import Title from "../../Title/Title";
 
 const UpcommingMovie = () => {
   const { data: upcoming } = useQuery({
     queryKey: ["upcoming"],
     queryFn: async () => {
-      const res = await fetch(`https://cineplanet-server.vercel.app/upcoming`);
+      const res = await fetch(`https://cineplanet-movie-server.vercel.app/upcoming`);
       const data = await res.json();
 
       return data;

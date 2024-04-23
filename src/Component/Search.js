@@ -6,7 +6,7 @@ const Search = () => {
   const [filterVal, setFilterVal] = useState("");
 
   useEffect(() => {
-    fetch("https://cineplanet-server.vercel.app/allsearch")
+    fetch("https://cineplanet-movie-server.vercel.app/allsearch")
       .then((res) => res.json())
       .then((res) => {
         setData(res);

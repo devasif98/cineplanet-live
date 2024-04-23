@@ -3,15 +3,15 @@ import { BsCollectionFill } from "react-icons/bs";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import Favorite from "../../../Shared/Favorite/Favorite";
-import ViewAllBtn from "../../button/ViewAllBtn";
 import Title from "../../Title/Title";
+import ViewAllBtn from "../../button/ViewAllBtn";
 
 const PopularMovies = () => {
 
   const { data: popular } = useQuery({
     queryKey: ["popular"],
     queryFn: async () => {
-      const res = await fetch(`https://cineplanet-server.vercel.app/popular`);
+      const res = await fetch(`https://cineplanet-movie-server.vercel.app/popular`);
       const data = await res.json();
       return data;
     },

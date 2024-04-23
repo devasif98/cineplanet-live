@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 import { Autoplay, FreeMode, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Favorite from "../../Shared/Favorite/Favorite";
-import ViewAllBtn from "../button/ViewAllBtn";
 import Title from "../Title/Title";
+import ViewAllBtn from "../button/ViewAllBtn";
 
 const MostViewed = () => {
   const { data: mostView } = useQuery({
     queryKey: ["mostView"],
     queryFn: async () => {
-      const res = await fetch(`https://cineplanet-server.vercel.app/mostViewed`);
+      const res = await fetch(`https://cineplanet-movie-server.vercel.app/mostViewed`);
       const data = await res.json();
       return data;
     },

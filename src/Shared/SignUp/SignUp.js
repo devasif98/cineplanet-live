@@ -25,7 +25,7 @@ const Signup = () => {
   };
   const saveSocialUser = (name, email) => {
     const user = { name, email, role: "user", status: "Free", photoURL:"" };
-    fetch("https://cineplanet-server.vercel.app/users", {
+    fetch("https://cineplanet-movie-server.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -80,7 +80,7 @@ const Signup = () => {
   };
   const saveUser = (name, email, role, status, photoURL) => {
     const user = { name, email, role, status, photoURL };
-    fetch("https://cineplanet-server.vercel.app/users", {
+    fetch("https://cineplanet-movie-server.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",
